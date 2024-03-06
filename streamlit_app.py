@@ -71,7 +71,7 @@ def main():
   # Obtenemos los datos
   df_orig = get_data()
 
-  fig = px.line(data_frame=df_last, x='Date', y='Value',markers=True)
+  fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
   fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=550,height=350)
   fig.update_yaxes(range=[0, 10]) 
 
