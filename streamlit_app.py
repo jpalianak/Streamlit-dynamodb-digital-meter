@@ -73,8 +73,9 @@ def main():
 
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
   fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=550,height=350)
+  st.plotly_chart(fig)
 
-  print(df_orig.head())
+  #print(df_orig.head())
   #fig.update_yaxes(range=[0, 10]) 
 
   # Obtener la fecha actual
