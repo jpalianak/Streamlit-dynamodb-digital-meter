@@ -18,7 +18,7 @@ zona_horaria = timezone(timedelta(hours=-4))
 spacer = st.empty()
 
 # Header  
-st.header(r"$\small \color{black} \textbf{Monitoreo de corriente}$")
+st.header(r"$\small \color{black} \textbf{            Monitoreo de corriente}$")
 st.write('')
 
 # Footer
