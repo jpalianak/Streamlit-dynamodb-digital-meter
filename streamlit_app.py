@@ -15,11 +15,11 @@ st_autorefresh(interval=1440 * 1000 * 60 * 1000, key="dataframerefresh")
 zona_horaria = timezone(timedelta(hours=-4))
 
 # Creamos un placeholder inicial vacío
-#spacer = st.empty()
+spacer = st.empty()
 
 # Header  
-#st.header(r"$\small \color{black} \textbf{Productivity Dashboard}$")
-#st.write('')
+st.header(r"$\small \color{black} \textbf{Monitoreo de corriente}$")
+st.write('')
 
 # Footer
 footer="""<style>
