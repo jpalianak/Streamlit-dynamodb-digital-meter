@@ -57,9 +57,11 @@ def main():
   # Obtenemos los datos
   df_orig = get_data()
 
-  fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1000,height=500)
-  st.plotly_chart(fig)
+  row1_col1,row0_spacer, row1_col2 = st.columns((6, 0.1, 2))
+  with row1_col1:
+    fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
+    fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1000,height=500)
+    st.plotly_chart(fig)
 
   #print(df_orig.head())
   #fig.update_yaxes(range=[0, 10]) 
