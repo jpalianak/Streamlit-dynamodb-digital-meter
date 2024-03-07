@@ -18,7 +18,7 @@ zona_horaria = timezone(timedelta(hours=-4))
 spacer = st.empty()
 
 # Header  
-st.header(r"$\small \color{black} \textbf{            Monitoreo de corriente}$")
+st.header(r"$\small \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$")
 st.write('')
 
 # Footer
@@ -52,21 +52,6 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
   
-def line_graphic_maq(df_orig,maq,d_ini,d_fin): 
-  df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-  last_ratio = df_last['Ratio'].iloc[-1]
-  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Productivity [%]",width=700,height=350)
-  fig.update_yaxes(range=[0, 100]) 
-  return fig, last_ratio
-
-def line_graphic_main(df_orig,maq,d_ini,d_fin): 
-  df_last = compute_movement(df_orig,maq,d_ini,d_fin)
-  fig = px.line(data_frame=df_last, x='Date', y='Ratio',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Daily productivity [%]",width=550,height=350)
-  fig.update_yaxes(range=[0, 100]) 
-  return fig
-
 def main():
   # Obtenemos los datos
   df_orig = get_data()
