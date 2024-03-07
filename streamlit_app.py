@@ -72,7 +72,7 @@ def main():
   df_orig = get_data()
 
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=550,height=350)
+  fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1000,height=500)
   st.plotly_chart(fig)
 
   #print(df_orig.head())
