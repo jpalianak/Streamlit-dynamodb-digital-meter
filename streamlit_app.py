@@ -19,7 +19,7 @@ spacer = st.empty()
 
 # Header  
 st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
-st.header(r"$\tiny  \color{black} \textbf{Sistema de monitoreo en tiempo real del consumo de corriente procesando de imagenes del amperimetro}$")
+st.header(r"$\tiny  \color{black} \textbf{Sistema de monitoreo en tiempo real del consumo de corriente procesando imagenes del amperimetro}$")
 st.write('')
 
 # Footer
