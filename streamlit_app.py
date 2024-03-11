@@ -65,9 +65,9 @@ def main():
 
   with row1_col2:
     st.write('Maximo registro')
-    st.write(df['Value'].max())
+    st.write(df_orig['Value'].max())
     st.write('Producido el')
-    st.write(df.loc[df['Value'].idxmax(), 'Date_num'])
+    st.write(df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
     
     
   #print(df_orig.head())
