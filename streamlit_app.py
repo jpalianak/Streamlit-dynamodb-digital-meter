@@ -64,10 +64,8 @@ def main():
     st.plotly_chart(fig)
 
   with row1_col2:
-    st.write('Maximo registro')
-    st.metric(df_orig['Value'].max())
-    st.write('Producido el')
-    st.metric(df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
+    st.metric('Maximo registro',df_orig['Value'].max())
+    st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
     
     
   #print(df_orig.head())
