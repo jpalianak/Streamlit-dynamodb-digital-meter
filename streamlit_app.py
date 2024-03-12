@@ -10,6 +10,7 @@ from PIL import Image
 
 st.set_page_config(layout="wide")
 
+
 # auto refresh el primer numero son la cantidad de minutos
 st_autorefresh(interval=1440 * 1000 * 60 * 1000, key="dataframerefresh")
 
