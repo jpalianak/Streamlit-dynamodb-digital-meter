@@ -56,7 +56,6 @@ def get_data():
   return df
 
 image = Image.open("airbiz.png")
-st.sidebar.header("AIRBIZ")
 st.sidebar.image(image)
 
 # Obtenemos los datos
