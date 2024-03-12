@@ -69,4 +69,4 @@ with row1_col1:
 
 with row1_col2:
   st.metric('Maximo registro',df_orig['Value'].max())
-  st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']) 
+  st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), pd.to_datetime(df['Date_num'] * 10**9)]) 
