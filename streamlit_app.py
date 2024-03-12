@@ -1,4 +1,4 @@
-import streamlit as st
+vimport streamlit as st
 import pandas as pd
 import time
 import boto3
@@ -54,29 +54,10 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
 
-def add_logo():
-    st.markdown(
-        """
-        <style>
-            [data-testid="stSidebarNav"] {
-                background-image: url(http://placekitten.com/200/200);
-                background-repeat: no-repeat;
-                padding-top: 120px;
-                background-position: 20px 20px;
-            }
-            [data-testid="stSidebarNav"]::before {
-                content: "AIRBIZ";
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 30px;
-                position: relative;
-                top: 100px;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-  
+image = Image.open("logo.png")
+st.sidebar.header("Company name")
+st.sidebar.image(image)
+
 # Obtenemos los datos
 df_orig = get_data()
 
@@ -88,7 +69,4 @@ with row1_col1:
 
 with row1_col2:
   st.metric('Maximo registro',df_orig['Value'].max())
-  st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
-    
-add_logo("./assets/images/logo.png", height=200)
-  
+  st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']) 
