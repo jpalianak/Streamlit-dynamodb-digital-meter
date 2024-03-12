@@ -55,7 +55,7 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
 
-image = Image.open("C:/Users\juana\OneDrive\Documentos\IA\CEIA\ProyectoFinal\Imagenes/perro.jpg")
+image = Image.open("C:/Users/juana/OneDrive/Documentos/IA\CEIA/ProyectoFinal/Imagenes/perro.jpg")
 st.sidebar.header("Company name")
 st.sidebar.image(image)
 
