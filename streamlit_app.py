@@ -52,6 +52,29 @@ def get_data():
   df['Value'] = pd.to_numeric(df['Value'])
   df = df.sort_values(by='Date_num')
   return df
+
+def add_logo():
+    st.markdown(
+        """
+        <style>
+            [data-testid="stSidebarNav"] {
+                background-image: url(http://placekitten.com/200/200);
+                background-repeat: no-repeat;
+                padding-top: 120px;
+                background-position: 20px 20px;
+            }
+            [data-testid="stSidebarNav"]::before {
+                content: "AIRBIZ";
+                margin-left: 20px;
+                margin-top: 20px;
+                font-size: 30px;
+                position: relative;
+                top: 100px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
   
 def main():
   # Obtenemos los datos
@@ -67,7 +90,8 @@ def main():
     st.metric('Maximo registro',df_orig['Value'].max())
     st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
     
-    
+  add_logo()
+  
   #print(df_orig.head())
   #fig.update_yaxes(range=[0, 10]) 
 
