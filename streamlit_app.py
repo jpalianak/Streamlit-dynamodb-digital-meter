@@ -6,6 +6,7 @@ import plotly.express as px
 from datetime import datetime, timezone, timedelta
 import plotly.graph_objects as go
 from streamlit_autorefresh import st_autorefresh
+from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(layout="wide")
 
@@ -89,5 +90,5 @@ with row1_col2:
   st.metric('Maximo registro',df_orig['Value'].max())
   st.metric('Producido el', df_orig.loc[df_orig['Value'].idxmax(), 'Date_num'])
     
-add_logo()
+add_logo("./assets/images/logo.png", height=200)
   
