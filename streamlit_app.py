@@ -6,6 +6,7 @@ import plotly.express as px
 from datetime import datetime, timezone, timedelta
 import plotly.graph_objects as go
 from streamlit_autorefresh import st_autorefresh
+from PIL import Image
 
 st.set_page_config(layout="wide")
 
