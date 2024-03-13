@@ -73,5 +73,4 @@ with row1_col2:
   st.write(f'<h3>Valor: {max_event} Amp</h3>', unsafe_allow_html=True)
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
   fecha_event = pd.to_datetime(fecha_event * 10**9)
-  #st.write("<h2>Producido el</h2>", unsafe_allow_html=True)
   st.write(f'<h3>Fecha: {fecha_event}</h3>', unsafe_allow_html=True)
