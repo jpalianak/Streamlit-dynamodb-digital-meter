@@ -71,4 +71,5 @@ with row1_col2:
   st.metric('Maximo registro',df_orig['Value'].max())
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
   fecha_event = pd.to_datetime(fecha_event * 10**9)
-  st.markdown(f'**Producido el:** {fecha_event}')
+  st.write('Producido el:')
+  st.write(fecha_event)
