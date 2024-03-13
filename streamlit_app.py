@@ -68,12 +68,9 @@ with row1_col1:
   st.plotly_chart(fig)
 
 with row1_col2:
-  st.metric('Maximo registro',df_orig['Value'].max())
+  st.write("<h2>Maximo registro</h2>",df_orig['Value'].max())
+  st.write("<h2>{df_orig['Value'].max())}</h2>")
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
   fecha_event = pd.to_datetime(fecha_event * 10**9)
-  st.write("<h1>Producido el</h1>", unsafe_allow_html=True)
   st.write("<h2>Producido el</h2>", unsafe_allow_html=True)
-  st.write("<h3>Producido el</h3>", unsafe_allow_html=True)
-  
-  st.write('Producido el')
-  st.write(fecha_event)
+  st.write("<h2>{fecha_event}</h2>")
