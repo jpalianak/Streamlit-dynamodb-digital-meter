@@ -69,7 +69,7 @@ with row1_col1:
 
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
-  max_event = df_orig['Value'].max())
+  max_event = df_orig['Value'].max()
   st.write(f'<h2>{max_event}</h2>', unsafe_allow_html=True)
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
   fecha_event = pd.to_datetime(fecha_event * 10**9)
