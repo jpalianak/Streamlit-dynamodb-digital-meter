@@ -47,7 +47,7 @@ header_html = """
     </div>
 </div>
 """
-st.markdown(html_content, unsafe_allow_html=True)
+#st.markdown(html_content, unsafe_allow_html=True)
 
 # Header  
 #st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
