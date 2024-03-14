@@ -23,7 +23,7 @@ header_html = """
 <style>
 .header {
     position: fixed;
-    top: 5;
+    top: 2;
     left: 10;
     width: 100%;
     background-color: white;
