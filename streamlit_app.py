@@ -19,24 +19,12 @@ zona_horaria = timezone(timedelta(hours=-4))
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
 
-# Custom CSS
-custom_css = """
-<style>
-body {
-    margin-top: 10px !important; /* Márgen superior */
-    margin-bottom: 0px !important; /* Márgen inferior */
-    margin-right: 0px !important; /* Márgen derecho */
-    margin-left: 0px !important; /* Márgen izquierdo */
-}
-</style>
-"""
-
 header_html = """
 <style>
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 10;
+    left: 10;
     width: 100%;
     background-color: white;
     color: black;
