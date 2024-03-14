@@ -18,6 +18,7 @@ zona_horaria = timezone(timedelta(hours=-4))
 
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
+
 # Custom CSS
 custom_css = """
 <style>
@@ -30,10 +31,28 @@ body {
 </style>
 """
 
+header_html = """
+<style>
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+</style>
+<div class="header">
+    <h1>Monitoreo de la evolución del consumo de corriente</h1>
+    <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro</p>
+</div>
+"""
+
 # Header  
-st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
-st.header(r"$\tiny  \color{black} \textbf{Sistema de monitoreo en tiempo real del consumo de corriente procesando imagenes del amperimetro}$")
-#st.write('')
+#st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
+#st.header(r"$\tiny  \color{black} \textbf{Sistema de monitoreo en tiempo real del consumo de corriente procesando imagenes del amperimetro}$")
+
 
 # Footer
 footer="""<style>
@@ -45,7 +64,8 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 <p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
 </div>
 """
-st.markdown(custom_css,unsafe_allow_html=True)
+#st.markdown(custom_css,unsafe_allow_html=True)
+st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
 
 def get_data():
