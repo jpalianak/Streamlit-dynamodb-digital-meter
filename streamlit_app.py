@@ -34,6 +34,7 @@ header_html = """
 .header img {
     height: 50px; /* Ajuste la altura de la imagen según sea necesario */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
+    float: left; /* Posiciona la imagen a la izquierda */
 }
 </style>
 <div class="header">
