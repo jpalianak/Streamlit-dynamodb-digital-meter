@@ -41,8 +41,10 @@ header_html = """
 </style>
 <div class="header">
     <img src="airbiz.png" alt="Descripción de la imagen">
-    <h1>Monitoreo de la evolución del consumo de corriente</h1>
-    <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro</p>
+    <div>
+        <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
+        <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro</p>
+    </div>
 </div>
 """
 
