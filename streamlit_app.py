@@ -23,7 +23,7 @@ spacer = st.empty()
 custom_css = """
 <style>
 body {
-    margin-top: 0px !important; /* Márgen superior */
+    margin-top: 10px !important; /* Márgen superior */
     margin-bottom: 0px !important; /* Márgen inferior */
     margin-right: 0px !important; /* Márgen derecho */
     margin-left: 0px !important; /* Márgen izquierdo */
@@ -40,7 +40,7 @@ header_html = """
     width: 100%;
     background-color: white;
     color: black;
-    text-align: center;
+    text-align: left;
 }
 </style>
 <div class="header">
