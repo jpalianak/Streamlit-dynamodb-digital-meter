@@ -22,10 +22,10 @@ spacer = st.empty()
 custom_css = """
 <style>
 body {
-    margin-top: 0px; /* Márgen superior */
-    margin-bottom: 0px; /* Márgen inferior */
-    margin-right: 0px; /* Márgen derecho */
-    margin-left: 0px; /* Márgen izquierdo */
+    margin-top: 0px !important; /* Márgen superior */
+    margin-bottom: 0px !important; /* Márgen inferior */
+    margin-right: 0px !important; /* Márgen derecho */
+    margin-left: 0px !important; /* Márgen izquierdo */
 }
 </style>
 """
