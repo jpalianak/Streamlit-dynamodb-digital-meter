@@ -24,7 +24,7 @@ header_html = """
 .header {
     position: fixed;
     top: 30px;
-    left: 10px; /* Ajuste la posición izquierda según sea necesario */
+    left: 30px; /* Ajuste la posición izquierda según sea necesario */
     width: 100%;
     background-color: white;
     color: black;
