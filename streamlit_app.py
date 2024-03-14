@@ -47,12 +47,6 @@ header_html = """
     </div>
 </div>
 """
-#st.markdown(html_content, unsafe_allow_html=True)
-
-# Header  
-#st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
-#st.header(r"$\tiny  \color{black} \textbf{Sistema de monitoreo en tiempo real del consumo de corriente procesando imagenes del amperimetro}$")
-
 
 # Footer
 footer="""<style>
@@ -64,7 +58,7 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 <p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
 </div>
 """
-#st.markdown(custom_css,unsafe_allow_html=True)
+
 st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
 
