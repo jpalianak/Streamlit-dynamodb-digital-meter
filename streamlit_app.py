@@ -29,12 +29,14 @@ header_html = """
     background-color: white;
     color: black;
     text-align: left;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
 }
 
 .header img {
     height: 50px; /* Ajuste la altura de la imagen según sea necesario */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
-    float: left; /* Posiciona la imagen a la izquierda */
+
 }
 </style>
 <div class="header">
