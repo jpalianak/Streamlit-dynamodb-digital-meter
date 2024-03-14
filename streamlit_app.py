@@ -18,6 +18,17 @@ zona_horaria = timezone(timedelta(hours=-4))
 
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
+# Custom CSS
+custom_css = """
+<style>
+body {
+    margin-top: 0px; /* Márgen superior */
+    margin-bottom: 0px; /* Márgen inferior */
+    margin-right: 0px; /* Márgen derecho */
+    margin-left: 0px; /* Márgen izquierdo */
+}
+</style>
+"""
 
 # Header  
 st.header(r"$\normalsize  \color{black} \textbf{Monitoreo de la evolucion del consumo de corriente}$" , divider='gray')
@@ -34,24 +45,8 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 <p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
 </div>
 """
+st.markdown(custom_css,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
-
-st.markdown("""
-        <style>
-               .css-18e3th9 {
-                    padding-top: 0rem;
-                    padding-bottom: 10rem;
-                    padding-left: 5rem;
-                    padding-right: 5rem;
-                }
-               .css-1d391kg {
-                    padding-top: 3.5rem;
-                    padding-right: 1rem;
-                    padding-bottom: 3.5rem;
-                    padding-left: 1rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
 
 def get_data():
   # Crear el cliente de DynamoDB usando boto3
