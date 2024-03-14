@@ -24,14 +24,20 @@ header_html = """
 .header {
     position: fixed;
     top: 30px;
-    left: 10;
+    left: 10px; /* Ajuste la posición izquierda según sea necesario */
     width: 100%;
     background-color: white;
     color: black;
     text-align: left;
 }
+
+.header img {
+    height: 50px; /* Ajuste la altura de la imagen según sea necesario */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
 </style>
 <div class="header">
+    <img src="airbiz.png" alt="Descripción de la imagen">
     <h1>Monitoreo de la evolución del consumo de corriente</h1>
     <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro</p>
 </div>
