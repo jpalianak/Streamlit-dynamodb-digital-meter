@@ -19,6 +19,8 @@ zona_horaria = timezone(timedelta(hours=-4))
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
 
+airbiz = Image.open("airbiz.png")
+
 header_html = """
 <style>
 .header {
@@ -40,7 +42,7 @@ header_html = """
 }
 </style>
 <div class="header">
-    <img src="https://www.w3schools.com/w3css/img_lights.jpg" alt="Descripción de la imagen">
+    <img src="https://drive.google.com/file/d/1d9rFyGfNvRHXYd7fyzRVMpwKrk4Mk6rc/view?usp=drive_link" alt="Descripción de la imagen">
     <div>
         <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
         <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro con IA</p>
