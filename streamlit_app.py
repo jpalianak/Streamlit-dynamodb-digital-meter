@@ -106,5 +106,11 @@ with row1_col2:
     fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
-    fig1 = go.Indicator(mode="gauge+number", value=10, title="Promedio")
+    fig1 = go.Indicator(
+        mode="gauge+number"
+        value = 200,
+        delta = {'reference': 160},
+        gauge = {'axis': {'visible': False}},
+        domain = {'row': 0, 'column': 0}
+        )
     st.plotly_chart(fig1)
