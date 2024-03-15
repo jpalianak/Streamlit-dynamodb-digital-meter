@@ -107,7 +107,7 @@ with row1_col2:
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
     fig1 = go.Indicator(
-        mode="gauge+number"
+        mode="gauge+number",
         value = 200,
         delta = {'reference': 160},
         gauge = {'axis': {'visible': False}},
