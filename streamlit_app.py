@@ -95,8 +95,8 @@ with row1_col1:
             yaxis_title="Amper",
             width=1300,
             height=600
-            )
-            st.plotly_chart(fig)
+        )
+        st.plotly_chart(fig)
 
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
