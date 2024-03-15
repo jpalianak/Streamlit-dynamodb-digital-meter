@@ -97,6 +97,8 @@ with row1_col1:
     st.plotly_chart(fig)
     
 with row1_col2:
+  st.write('')
+  st.write('')   
   max_event = df_orig['Value'].max()
   st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
