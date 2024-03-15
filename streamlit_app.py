@@ -89,15 +89,13 @@ with row1_col1:
   st.write('')   
   st.write('')   
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-# Configura el diseño del gráfico
-fig.update_layout(
+  fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
     width=1300,
     height=600
-)
-
-st.plotly_chart(fig)
+  )  
+  st.plotly_chart(fig)
 
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
