@@ -88,7 +88,7 @@ row1_col1,row0_spacer, row1_col2 = st.columns((0.75, 0.05, 0.2))
 with row1_col1:
     st.write('')   
     st.write('')   
-    with st.container(border=True)
+    with st.container(border=True):
         fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
         fig.update_layout(
             xaxis_title="Date",
