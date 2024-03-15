@@ -97,13 +97,7 @@ fig.update_layout(
     height=600
 )
 
-# Renderiza el gráfico dentro de un contenedor con un marco
-with st.container():
-    st.markdown(
-        f'<div style="border: 2px solid black; padding: 10px; z-index: -1;">{fig.to_html()}</div>',
-        unsafe_allow_html=True
-    )
-#st.plotly_chart(fig)
+st.plotly_chart(fig)
 
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
