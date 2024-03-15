@@ -19,22 +19,6 @@ zona_horaria = timezone(timedelta(hours=-4))
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
 
-html_content1 = """
-<!DOCTYPE html>
-<html>
-<head>
-<title>Prueba de imagen</title>
-</head>
-<body>
-
-<img src="URL_de_tu_imagen.png" alt="Imagen de prueba">
-
-</body>
-</html>
-"""
-
-st.write(html_content1, unsafe_allow_html=True)
-
 header_html = """
 <style>
 .header {
@@ -75,7 +59,7 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 </div>
 """
 
-#st.markdown(header_html,unsafe_allow_html=True)
+st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
 
 def get_data():
