@@ -35,7 +35,7 @@ header_html = """
 
 .header img {
     height: 100px; /* Ajuste la altura de la imagen según sea necesario */
-    margin-right: 50px; /* Espacio entre la imagen y el texto */
+    margin-right: 100px; /* Espacio entre la imagen y el texto */
 
 }
 </style>
