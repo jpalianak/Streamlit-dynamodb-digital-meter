@@ -19,6 +19,22 @@ zona_horaria = timezone(timedelta(hours=-4))
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
 
+html_content1 = """
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prueba de imagen</title>
+</head>
+<body>
+
+<img src="URL_de_tu_imagen.png" alt="Imagen de prueba">
+
+</body>
+</html>
+"""
+
+st.write(html_content1, unsafe_allow_html=True)
+
 header_html = """
 <style>
 .header {
