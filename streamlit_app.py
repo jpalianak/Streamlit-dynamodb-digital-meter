@@ -91,7 +91,7 @@ with row1_col1:
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
   fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1300,height=600)
   fig.update_layout(
-    margin=dict(l=50, r=50, t=50, b=50),  # Ajusta los márgenes según tus necesidades
+    margin=dict(l=10, r=10, t=10, b=10),  # Ajusta los márgenes según tus necesidades
     paper_bgcolor="lightgrey",  # Cambia el color de fondo del marco
     plot_bgcolor="white",  # Cambia el color de fondo del área de trazado
     width=1300,
