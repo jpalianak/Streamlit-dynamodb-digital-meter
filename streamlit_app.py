@@ -103,4 +103,4 @@ with row1_col2:
   st.write(f'<h3><span style="font-weight: bold;">Valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)
   fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
   fecha_event = pd.to_datetime(fecha_event * 10**9)
-  st.write(f'<h3>Fecha: {fecha_event}</h3>', unsafe_allow_html=True)
+  st.write(f'<h3><span style="font-weight: bold;">Fecha:</span> <span style="font-style: italic;">{fecha_event} Amp</span></h3>', unsafe_allow_html=True)
