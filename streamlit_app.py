@@ -102,6 +102,6 @@ with row1_col2:
     fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
-with row1_col2:
-   mean_event = df_orig['Value'].mean()
+with row1_col3:
+    mean_event = df_orig['Value'].mean()
     st.write(f'<h3><span style="font-weight: bold;">Promedio:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)  
