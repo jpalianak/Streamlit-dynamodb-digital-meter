@@ -89,7 +89,7 @@ fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
 fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
-    width=1500,
+    width=1700,
     height=600
 )
 st.plotly_chart(fig)
