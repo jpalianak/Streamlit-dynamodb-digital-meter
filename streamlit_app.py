@@ -42,7 +42,7 @@ header_html = """
 }
 </style>
 <div class="header">
-    <img src="https://imgbb.host/vTCM" alt="Descripción de la imagen">
+    <img src="https://imgbb.host/vTCM.png" alt="Descripción de la imagen">
     <div>
         <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
         <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro con IA</p>
