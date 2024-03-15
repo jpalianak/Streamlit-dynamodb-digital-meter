@@ -75,7 +75,7 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 </div>
 """
 
-st.markdown(header_html,unsafe_allow_html=True)
+#st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
 
 def get_data():
