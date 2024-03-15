@@ -81,9 +81,6 @@ def get_data():
   df = df.sort_values(by='Date_num')
   return df
 
-image = Image.open("airbiz.png")
-st.sidebar.image(image)
-
 # Obtenemos los datos
 df_orig = get_data()
 
