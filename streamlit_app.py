@@ -43,7 +43,7 @@ header_html = """
     <img src="https://raw.githubusercontent.com/jpalianak/Streamlit-dynamodb-digital-meter/main/airbiz.png" alt="Descripción de la imagen">
     <div>
         <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
-        <p style="font-size: 20px;">Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes con IA (computer vision)</p>
+        <p style="font-size: 20px;">Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes con IA</p>
     </div>
 </div>
 """
