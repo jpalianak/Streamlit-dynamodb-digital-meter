@@ -88,16 +88,21 @@ row1_col1,row0_spacer, row1_col2 = st.columns((0.75, 0.05, 0.2))
 with row1_col1:
     st.write('')   
     st.write('')   
-    with st.container(border=True):
-        fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-        fig.update_layout(
-            xaxis_title="Date",
-            yaxis_title="Amper",
-            width=1200,
-            height=600
-        )
-        st.plotly_chart(fig)
+    fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
+    fig.update_layout(
+        xaxis_title="Date",
+        yaxis_title="Amper",
+        width=1200,
+        height=600
+    )
+    st.plotly_chart(fig)
 
+    # Renderiza el gráfico dentro de un contenedor con un borde personalizado
+    st.markdown(
+        f'<div style="border: 2px solid black; padding: 10px;">{fig.to_html()}</div>',
+        unsafe_allow_html=True
+    )
+    
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
   max_event = df_orig['Value'].max()
