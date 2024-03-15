@@ -95,11 +95,7 @@ with row1_col1:
         width=1200,
         height=600
     )
-    #st.plotly_chart(fig)
-
-    # Renderiza el gráfico dentro de un contenedor con un borde personalizado
-    with st.container(style="border: 2px solid black; padding: 10px;"):
-        st.write(fig)
+    st.plotly_chart(fig)
     
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
