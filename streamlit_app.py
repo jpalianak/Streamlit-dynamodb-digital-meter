@@ -95,7 +95,7 @@ with row1_col1:
         width=1200,
         height=600
     )
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
 
     # Renderiza el gráfico dentro de un contenedor con un borde personalizado
     st.markdown(
