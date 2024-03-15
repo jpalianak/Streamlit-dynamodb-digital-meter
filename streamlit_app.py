@@ -89,16 +89,20 @@ with row1_col1:
   st.write('')   
   st.write('')   
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-  fig.update_layout(
+# Configura el diseño del gráfico
+fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
     width=1300,
-    height=600,
-    margin=dict(l=1, r=10, t=10, b=1),  # Ajusta los márgenes según tus necesidades
-    paper_bgcolor="lightgrey",  # Cambia el color de fondo del marco
-    plot_bgcolor="white"  # Cambia el color de fondo del área de trazado
-)  
-  st.plotly_chart(fig)
+    height=600
+)
+
+# Renderiza el gráfico con un borde
+st.write(
+    f'<div style="border: 2px solid black; padding: 10px;">{fig.to_html()}</div>',
+    unsafe_allow_html=True
+)
+#st.plotly_chart(fig)
 
 with row1_col2:
   st.write("<h2>Maximo registro</h2>", unsafe_allow_html=True)
