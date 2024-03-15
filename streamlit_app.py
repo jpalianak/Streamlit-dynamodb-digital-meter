@@ -89,7 +89,7 @@ with row1_col1:
   st.write('')   
   st.write('')   
   fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-  fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1300,height=700)
+  fig.update_layout(xaxis_title="Date", yaxis_title="Amper",width=1300,height=600)
   st.plotly_chart(fig)
 
 with row1_col2:
