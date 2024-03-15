@@ -19,8 +19,6 @@ zona_horaria = timezone(timedelta(hours=-4))
 # Creamos un placeholder inicial vacío
 spacer = st.empty()
 
-airbiz = Image.open("airbiz.png")
-
 header_html = """
 <style>
 .header {
@@ -42,7 +40,7 @@ header_html = """
 }
 </style>
 <div class="header">
-    <img src="https://github.com/jpalianak/Streamlit-dynamodb-digital-meter/blob/main/airbiz.png" alt="Descripción de la imagen">
+    <img src="https://raw.githubusercontent.com/jpalianak/Streamlit-dynamodb-digital-meter/main/airbiz.png" alt="Descripción de la imagen">
     <div>
         <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
         <p>Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes del amperímetro con IA</p>
