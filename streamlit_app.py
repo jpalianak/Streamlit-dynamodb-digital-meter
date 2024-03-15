@@ -91,7 +91,7 @@ with row1_col1:
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Amper",
-        width=1200,
+        width=1300,
         height=600
     )
     st.plotly_chart(fig)
