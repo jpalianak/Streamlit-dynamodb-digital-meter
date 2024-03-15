@@ -94,7 +94,7 @@ with row1_col1:
     yaxis_title="Amper",
     width=1300,
     height=600,
-    margin=dict(l=10, r=10, t=10, b=10),  # Ajusta los márgenes según tus necesidades
+    margin=dict(l=1, r=10, t=10, b=1),  # Ajusta los márgenes según tus necesidades
     paper_bgcolor="lightgrey",  # Cambia el color de fondo del marco
     plot_bgcolor="white"  # Cambia el color de fondo del área de trazado
 )  
