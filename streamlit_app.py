@@ -84,33 +84,24 @@ def get_data():
 # Obtenemos los datos
 df_orig = get_data()
 
-row1_col1,row0_spacer, row1_col2 = st.columns((0.75, 0.05, 0.2))
+st.write('')   
+fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
+fig.update_layout(
+    xaxis_title="Date",
+    yaxis_title="Amper",
+    width=1500,
+    height=600
+)
+st.plotly_chart(fig)
+
+row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
 with row1_col1:
-    st.write('')   
-    fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
-    fig.update_layout(
-        xaxis_title="Date",
-        yaxis_title="Amper",
-        width=1300,
-        height=600
-    )
-    st.plotly_chart(fig)
-    
-with row1_col2:
-    st.write('')
-    st.write('')   
-    st.write('')   
-    st.write('')     
     max_event = df_orig['Value'].max()
-    st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)
+    st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
+with row1_col2:
     fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
-    fig1 = go.Indicator(
-        mode="gauge+number",
-        value = 200,
-        delta = {'reference': 160},
-        gauge = {'axis': {'visible': False}},
-        domain = {'row': 0, 'column': 0}
-        )
-    st.plotly_chart(fig1)
+with row1_col2:
+   mean_event = df_orig['Value'].mean()
+    st.write(f'<h3><span style="font-weight: bold;">Promedio:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)  
