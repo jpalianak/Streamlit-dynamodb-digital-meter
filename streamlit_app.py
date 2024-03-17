@@ -94,7 +94,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig)
 
-row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3,row2_spacer, row1_col4= st.columns((0.24, 0.01, 0.24,0.01,0.24,0.01,0.24))
+row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
 with row1_col1:
     max_event = df_orig['Value'].max()
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
@@ -105,10 +105,3 @@ with row1_col2:
 with row1_col3:
     mean_event = round(df_orig['Value'].mean(),2)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)
-with row1_col4:
-    mean_event = df_orig['Value'].mean()
-    # Calcular la cantidad de horas
-    hours_count = pd.to_datetime(df_orig['Date']).dt.hour.nunique()
-    # Calcular el promedio por hora
-    mean_per_hour = round((mean_event / hours_count)*0.22,2)
-    st.write(f'<h3><span style="font-weight: bold;">Consumo promedio:</span> <span style="font-style: italic;">{mean_per_hour} KWhr</span></h3>', unsafe_allow_html=True)  
