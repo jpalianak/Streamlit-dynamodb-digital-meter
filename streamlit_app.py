@@ -94,7 +94,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig)
 
-row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
+row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3,row2_spacer, row1_col4= st.columns((0.2, 0.066, 0.2,0.066,0.2,0.066,0.2))
 with row1_col1:
     max_event = df_orig['Value'].max()
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
@@ -103,6 +103,9 @@ with row1_col2:
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
 with row1_col3:
+    mean_event = round(df_orig['Value'].mean(),2)
+    st.write(f'<h3><span style="font-weight: bold;">Valor promedio:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)
+with row1_col4:
     mean_event = df_orig['Value'].mean()
     # Calcular la cantidad de horas
     hours_count = pd.to_datetime(df_orig['Date']).dt.hour.nunique()
