@@ -103,9 +103,9 @@ with row1_col2:
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
 with row1_col3:
-    mean_event = round(df_orig['Value'].mean(), 2)
+    mean_event = df_orig['Value'].mean()
     # Calcular la cantidad de horas
     hours_count = pd.to_datetime(df_orig['Date']).dt.hour.nunique()
     # Calcular el promedio por hora
-    mean_per_hour = mean_event / hours_count
+    mean_per_hour = round(mean_event / hours_count)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio:</span> <span style="font-style: italic;">{mean_per_hour} Amp/Hr</span></h3>', unsafe_allow_html=True)  
