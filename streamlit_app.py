@@ -94,7 +94,7 @@ fig.update_layout(
 )
 st.plotly_chart(fig)
 
-row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3,row2_spacer, row1_col4= st.columns((0.2, 0.066, 0.2,0.066,0.2,0.066,0.2))
+row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3,row2_spacer, row1_col4= st.columns((0.24, 0.01, 0.24,0.01,0.24,0.01,0.24))
 with row1_col1:
     max_event = df_orig['Value'].max()
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
