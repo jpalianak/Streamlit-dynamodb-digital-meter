@@ -85,7 +85,7 @@ def get_data():
 df_orig = get_data()
 
 st.write('')   
-fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True)
+fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True,line_shape='spline')
 fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
