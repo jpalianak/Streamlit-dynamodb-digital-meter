@@ -105,7 +105,7 @@ with row1_col2:
 with row1_col3:
     mean_event = round(df_orig['Value'].mean(), 2)
     # Calcular la cantidad de horas
-    hours_count = df_orig['Date'].dt.hour.nunique()
+    hours_count = pd.to_datetime(df_orig['Date']).dt.hour.nunique()
     # Calcular el promedio por hora
     mean_per_hour = mean_value / hours_count
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio:</span> <span style="font-style: italic;">{mean_per_hour} Amp/Hr</span></h3>', unsafe_allow_html=True)  
