@@ -36,11 +36,11 @@ header_html = """
 .header img {
     height: 100px; /* Ajuste la altura de la imagen según sea necesario */
     margin-right: 100px; /* Espacio entre la imagen y el texto */
-
 }
+
 </style>
 <div class="header">
-    <img src="https://raw.githubusercontent.com/jpalianak/Streamlit-dynamodb-digital-meter/main/airbiz.png" alt="Descripción de la imagen">
+#    <img src="https://raw.githubusercontent.com/jpalianak/Streamlit-dynamodb-digital-meter/main/airbiz.png" alt="Descripción de la imagen">
     <div>
         <h1 class="title">Monitoreo de la evolución del consumo de corriente</h1>
         <p style="font-size: 20px;">Sistema de monitoreo en tiempo real del consumo de corriente procesando imágenes con IA</p>
@@ -49,14 +49,14 @@ header_html = """
 """
 
 # Footer
-footer="""<style>
-a:link , a:visited{color: blue;background-color: transparent;text-decoration: underline;}
-a:hover,  a:active {color: red;background-color: transparent;text-decoration: underline;}
-.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: white;color: black;text-align: center;}
-</style>
-<div class="footer">
-<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
-</div>
+#footer="""<style>
+#a:link , a:visited{color: blue;background-color: transparent;text-decoration: underline;}
+#a:hover,  a:active {color: red;background-color: transparent;text-decoration: underline;}
+#.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: white;color: black;text-align: center;}
+#</style>
+#<div class="footer">
+#<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
+#</div>
 """
 
 st.markdown(header_html,unsafe_allow_html=True)
