@@ -94,7 +94,7 @@ fig.add_scatter(
     x=df_orig_cnn['Date'],
     y=df_orig_cnn['Value'],
     mode='lines+markers',
-    line=dict(color='blue'),  # Color azul para CNN
+    line=dict(color='blue', shape='spline'),  # Color azul para CNN
     name='CNN'  # Nombre para la leyenda
 )
 
@@ -103,7 +103,7 @@ fig.add_scatter(
     x=df_orig_opencv['Date'],
     y=df_orig_opencv['Value'],
     mode='lines+markers',
-    line=dict(color='red'),  # Color rojo para OpenCV
+    line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
     name='OpenCV'  # Nombre para la leyenda
 )
 
