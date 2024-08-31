@@ -85,18 +85,38 @@ df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
 df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
 
 st.write('')   
-# Crear el gráfico con el primer DataFrame
-fig = px.line(data_frame=df_orig_cnn, x='Date', y='Value', markers=True, line_shape='spline', labels={'Value': 'Amper', 'Date': 'Fecha'}, title='Comparación de valores entre CNN y OpenCV')
 
-# Agregar la segunda traza al gráfico para el segundo DataFrame
-fig.add_scatter(x=df_orig_opencv['Date'], y=df_orig_opencv['Value'], mode='lines+markers', name='OpenCV')
+# Crear el gráfico con Plotly Express
+fig = px.line()
 
+# Añadir traza para CNN
+fig.add_scatter(
+    x=df_orig_cnn['Date'],
+    y=df_orig_cnn['Value'],
+    mode='lines+markers',
+    line=dict(color='blue'),  # Color azul para CNN
+    name='CNN'  # Nombre para la leyenda
+)
+
+# Añadir traza para OpenCV
+fig.add_scatter(
+    x=df_orig_opencv['Date'],
+    y=df_orig_opencv['Value'],
+    mode='lines+markers',
+    line=dict(color='red'),  # Color rojo para OpenCV
+    name='OpenCV'  # Nombre para la leyenda
+)
+
+# Configuración del layout del gráfico
 fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
     width=1700,
-    height=600
+    height=600,
+    title='Comparación de valores entre CNN y OpenCV',
+    legend_title="Método de Detección"
 )
+
 st.plotly_chart(fig)
 
 row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
