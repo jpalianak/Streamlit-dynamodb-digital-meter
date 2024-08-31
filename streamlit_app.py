@@ -96,7 +96,7 @@ fig.add_scatter(
     y=df_orig_cnn['Value'],
     mode='lines+markers',
     line=dict(color='blue', shape='spline'),  # Color azul para CNN
-    name='CNN'  # Nombre para la leyenda
+    name='SSD-MobileNet'  # Nombre para la leyenda
 )
 
 # Añadir traza para OpenCV
@@ -114,7 +114,7 @@ fig.update_layout(
     yaxis_title="Amper",
     width=1700,
     height=600,
-    title='Comparación de valores entre CNN y OpenCV',
+    title='Comparación de valores entre SSD-MobileNet y OpenCV',
     legend_title="Modelo de Detección"
 )
 
