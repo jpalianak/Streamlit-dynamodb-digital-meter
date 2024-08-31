@@ -57,7 +57,7 @@ header_html = """
 #<div class="footer">
 #<p>Developed by AIRBIZ <a style='display: block; text-align: center;' href="https://www.airbiz.com.ar/" target="_blank">www.airbiz.com.ar</a></p>
 #</div>
-"""
+#"""
 
 st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
