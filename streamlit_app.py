@@ -115,7 +115,7 @@ fig.update_layout(
     width=1700,
     height=600,
     title='Comparación de valores entre CNN y OpenCV',
-    legend_title="Método de Detección"
+    legend_title="Modelo de Detección"
 )
 
 st.plotly_chart(fig)
