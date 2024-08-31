@@ -62,10 +62,9 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 st.markdown(header_html,unsafe_allow_html=True)
 st.markdown(footer,unsafe_allow_html=True)
 
-def get_data():
+def get_data(table_name):
   # Crear el cliente de DynamoDB usando boto3
   dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
-  table_name = 'DynamoDBTable-SAM-Digital-Meter-SSD'  # Reemplaza 'nombre_de_la_tabla' con el nombre de tu tabla en DynamoDB
 
   # Obtener la tabla de DynamoDB
   table = dynamodb.Table(table_name)
@@ -82,10 +81,16 @@ def get_data():
   return df
 
 # Obtenemos los datos
-df_orig = get_data()
+df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
+df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
 
 st.write('')   
-fig = px.line(data_frame=df_orig, x='Date', y='Value',markers=True,line_shape='spline')
+# Crear el gráfico con el primer DataFrame
+fig = px.line(data_frame=df_orig_cnn, x='Date', y='Value', markers=True, line_shape='spline', labels={'Value': 'Amper', 'Date': 'Fecha'}, title='Comparación de valores entre CNN y OpenCV')
+
+# Agregar la segunda traza al gráfico para el segundo DataFrame
+fig.add_scatter(x=df_orig_opencv['Date'], y=df_orig_opencv['Value'], mode='lines+markers', name='OpenCV')
+
 fig.update_layout(
     xaxis_title="Date",
     yaxis_title="Amper",
@@ -96,12 +101,30 @@ st.plotly_chart(fig)
 
 row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
 with row1_col1:
-    max_event = df_orig['Value'].max()
-    st.write(f'<h3><span style="font-weight: bold;">Máximo valor:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
+    max_event = df_orig_cnn['Value'].max()
+    st.write(f'<h3><span style="font-weight: bold;">Máximo valor CNN:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
+
 with row1_col2:
-    fecha_event = df_orig.loc[df_orig['Value'].idxmax(), 'Date_num']
+    fecha_event = df_orig_cnn.loc[df_orig_cnn['Value'].idxmax(), 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
-    st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
+    st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor CNN:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
+
 with row1_col3:
-    mean_event = round(df_orig['Value'].mean(),2)
-    st.write(f'<h3><span style="font-weight: bold;">Valor promedio:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)
+    mean_event = round(df_orig_cnn['Value'].mean(), 2)
+    st.write(f'<h3><span style="font-weight: bold;">Valor promedio CNN:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)
+
+# Mostrar métricas para OpenCV
+row2_col1, row2_spacer, row2_col2, row2_spacer, row2_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
+
+with row2_col1:
+    max_event_opencv = df_orig_opencv['Value'].max()
+    st.write(f'<h3><span style="font-weight: bold;">Máximo valor OpenCV:</span> <span style="font-style: italic;">{max_event_opencv} Amp</span></h3>', unsafe_allow_html=True)  
+
+with row2_col2:
+    fecha_event_opencv = df_orig_opencv.loc[df_orig_opencv['Value'].idxmax(), 'Date_num']
+    fecha_event_opencv = pd.to_datetime(fecha_event_opencv * 10**9)
+    st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor OpenCV:</span> <span style="font-style: italic;">{fecha_event_opencv}</span></h3>', unsafe_allow_html=True)
+
+with row2_col3:
+    mean_event_opencv = round(df_orig_opencv['Value'].mean(), 2)
+    st.write(f'<h3><span style="font-weight: bold;">Valor promedio OpenCV:</span> <span style="font-style: italic;">{mean_event_opencv} Amp</span></h3>', unsafe_allow_html=True)
