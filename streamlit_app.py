@@ -100,13 +100,13 @@ fig.add_scatter(
 )
 
 # Añadir traza para OpenCV
-fig.add_scatter(
-    x=df_orig_opencv['Date'],
-    y=df_orig_opencv['Value'],
-    mode='lines+markers',
-    line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
-    name='OpenCV'  # Nombre para la leyenda
-)
+#fig.add_scatter(
+#    x=df_orig_opencv['Date'],
+#    y=df_orig_opencv['Value'],
+#    mode='lines+markers',
+#    line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
+#    name='OpenCV'  # Nombre para la leyenda
+#)
 
 # Configuración del layout del gráfico
 fig.update_layout(
