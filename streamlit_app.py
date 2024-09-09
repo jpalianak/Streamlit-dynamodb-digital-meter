@@ -93,7 +93,7 @@ fig = px.line()
 # Añadir traza para CNN
 fig.add_scatter(
     x=df_orig_cnn['Date'],
-    y=df_orig_cnn['Value'],
+    y=df_orig_cnn['Value']*10,
     mode='lines+markers',
     line=dict(color='blue', shape='spline'),  # Color azul para CNN
     name='SSD-MobileNet'  # Nombre para la leyenda
