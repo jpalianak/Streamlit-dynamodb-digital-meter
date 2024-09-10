@@ -63,10 +63,6 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 st.markdown(header_html,unsafe_allow_html=True)
 #st.markdown(footer,unsafe_allow_html=True)
 
-# Agregar checkboxes para seleccionar si mostrar o no las curvas
-show_cnn = st.checkbox('Mostrar curva SSD-MobileNet', value=True)
-show_opencv = st.checkbox('Mostrar curva OpenCV', value=True)
-
 def get_data(table_name):
   # Crear el cliente de DynamoDB usando boto3
   dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
@@ -89,6 +85,11 @@ def get_data(table_name):
 # Obtenemos los datos
 df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
 df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
+
+# Crear una barra lateral con checkboxes para seleccionar si mostrar o no las curvas
+st.sidebar.header("Opciones de visualización")
+show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
+show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 
 st.write('')   
 
