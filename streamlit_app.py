@@ -101,7 +101,7 @@ if show_cnn:
         x=df_orig_cnn['Date'],
         y=df_orig_cnn['Value']*10,
         mode='lines+markers',
-        line=dict(color='blue', shape='spline'),  # Color azul para CNN
+        line=dict(color='blue', shape='line'),  # Color azul para CNN
         name='SSD-MobileNet'  # Nombre para la leyenda
     )
 
@@ -111,7 +111,7 @@ if show_opencv:
         x=df_orig_opencv['Date'] + pd.Timedelta(seconds=10),
         y=df_orig_opencv['Value']*10,
         mode='lines+markers',
-        line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
+        line=dict(color='red', shape='line'),  # Color rojo para OpenCV
         name='OpenCV'  # Nombre para la leyenda
     )
 
