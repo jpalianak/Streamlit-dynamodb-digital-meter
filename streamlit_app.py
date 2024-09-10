@@ -101,7 +101,7 @@ fig.add_scatter(
 
 # Añadir traza para OpenCV
 fig.add_scatter(
-    x=df_orig_opencv['Date'],
+    x=df_orig_opencv['Date'] + pd.Timedelta(seconds=15),
     y=df_orig_opencv['Value']*10,
     mode='lines+markers',
     line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
