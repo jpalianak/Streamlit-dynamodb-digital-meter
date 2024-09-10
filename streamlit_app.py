@@ -63,6 +63,10 @@ a:hover,  a:active {color: red;background-color: transparent;text-decoration: un
 st.markdown(header_html,unsafe_allow_html=True)
 #st.markdown(footer,unsafe_allow_html=True)
 
+# Agregar checkboxes para seleccionar si mostrar o no las curvas
+show_cnn = st.checkbox('Mostrar curva SSD-MobileNet', value=True)
+show_opencv = st.checkbox('Mostrar curva OpenCV', value=True)
+
 def get_data(table_name):
   # Crear el cliente de DynamoDB usando boto3
   dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Reemplaza 'tu_region' con la región de tu tabla
@@ -92,22 +96,24 @@ st.write('')
 fig = px.line()
 
 # Añadir traza para CNN
-fig.add_scatter(
-    x=df_orig_cnn['Date'],
-    y=df_orig_cnn['Value']*10,
-    mode='lines+markers',
-    line=dict(color='blue', shape='spline'),  # Color azul para CNN
-    name='SSD-MobileNet'  # Nombre para la leyenda
-)
+if show_cnn:
+    fig.add_scatter(
+        x=df_orig_cnn['Date'],
+        y=df_orig_cnn['Value']*10,
+        mode='lines+markers',
+        line=dict(color='blue', shape='spline'),  # Color azul para CNN
+        name='SSD-MobileNet'  # Nombre para la leyenda
+    )
 
 # Añadir traza para OpenCV
-fig.add_scatter(
-    x=df_orig_opencv['Date'] + pd.Timedelta(seconds=10),
-    y=df_orig_opencv['Value']*10,
-    mode='lines+markers',
-    line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
-    name='OpenCV'  # Nombre para la leyenda
-)
+if show_opencv:
+    fig.add_scatter(
+        x=df_orig_opencv['Date'] + pd.Timedelta(seconds=10),
+        y=df_orig_opencv['Value']*10,
+        mode='lines+markers',
+        line=dict(color='red', shape='spline'),  # Color rojo para OpenCV
+        name='OpenCV'  # Nombre para la leyenda
+    )
 
 # Configuración del layout del gráfico
 fig.update_layout(
