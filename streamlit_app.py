@@ -140,5 +140,3 @@ with row2_col2:
 with row2_col3:
     mean_event_opencv = round(df_opencv_filtered['Value'].mean(), 2)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio OpenCV:</span> <span style="font-style: italic;">{mean_event_opencv} Amp</span></h3>', unsafe_allow_html=True)
-def get_data(table_name):
-    dynamodb = boto3.resource('
