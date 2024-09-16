@@ -63,17 +63,25 @@ def get_data(table_name):
 df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
 df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
 
+# Inicializar el valor en session_state para que persista entre recargas
+if 'start_date' not in st.session_state:
+    st.session_state['start_date'] = df_orig_cnn['Date'].min().date()
+
 # Barra lateral para opciones de visualización
 st.sidebar.header("Opciones de visualización")
 show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
 show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 
 # Seleccionar la fecha desde la que se quiere graficar
-start_date = st.sidebar.date_input("Seleccionar fecha de inicio", df_orig_cnn['Date'].min().date())
+start_date = st.sidebar.date_input("Seleccionar fecha de inicio", st.session_state['start_date'])
+
+# Actualizar el valor en session_state cuando el usuario cambia la fecha
+if start_date != st.session_state['start_date']:
+    st.session_state['start_date'] = start_date
 
 # Filtrar los datos a partir de la fecha seleccionada
-df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(start_date)]
-df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(start_date)]
+df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
+df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(st.session_state['start_date'])]
 
 # Crear el gráfico con Plotly Express
 fig = px.line()
@@ -140,3 +148,4 @@ with row2_col2:
 with row2_col3:
     mean_event_opencv = round(df_opencv_filtered['Value'].mean(), 2)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio OpenCV:</span> <span style="font-style: italic;">{mean_event_opencv} Amp</span></h3>', unsafe_allow_html=True)
+
