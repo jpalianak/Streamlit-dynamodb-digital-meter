@@ -122,33 +122,34 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 # Métricas para CNN
-row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
-with row1_col1:
-    max_event = round(df_cnn_filtered['Value'].max() * factor, 2)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Máximo valor CNN:</strong> {max_event} Amp</h4>', unsafe_allow_html=True)
+if show_cnn:
+    row1_col1, row0_spacer, row1_col2, row1_spacer, row1_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
+    with row1_col1:
+        max_event = round(df_cnn_filtered['Value'].max() * factor, 2)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Máximo valor CNN:</strong> {max_event} Amp</h4>', unsafe_allow_html=True)
 
-with row1_col2:
-    fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax(), 'Date_num']
-    fecha_event = pd.to_datetime(fecha_event * 10**9)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Fecha máximo valor CNN:</strong> {fecha_event}</h4>', unsafe_allow_html=True)
+    with row1_col2:
+        fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax(), 'Date_num']
+        fecha_event = pd.to_datetime(fecha_event * 10**9)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Fecha máximo valor CNN:</strong> {fecha_event}</h4>', unsafe_allow_html=True)
 
-with row1_col3:
-    mean_event = round(df_cnn_filtered['Value'].mean() * factor, 2)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Valor promedio CNN:</strong> {mean_event} Amp</h4>', unsafe_allow_html=True)
+    with row1_col3:
+        mean_event = round(df_cnn_filtered['Value'].mean() * factor, 2)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Valor promedio CNN:</strong> {mean_event} Amp</h4>', unsafe_allow_html=True)
 
 # Métricas para OpenCV
-row2_col1, row2_spacer, row2_col2, row2_spacer, row2_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
+if show_opencv:
+    row2_col1, row2_spacer, row2_col2, row2_spacer, row2_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
+    with row2_col1:
+        max_event_opencv = round(df_opencv_filtered['Value'].max() * factor, 2)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Máximo valor OpenCV:</strong> {max_event_opencv} Amp</h4>', unsafe_allow_html=True)
 
-with row2_col1:
-    max_event_opencv = round(df_opencv_filtered['Value'].max() * factor, 2)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Máximo valor OpenCV:</strong> {max_event_opencv} Amp</h4>', unsafe_allow_html=True)
+    with row2_col2:
+        fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax(), 'Date_num']
+        fecha_event_opencv = pd.to_datetime(fecha_event_opencv * 10**9)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Fecha máximo valor OpenCV:</strong> {fecha_event_opencv}</h4>', unsafe_allow_html=True)
 
-with row2_col2:
-    fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax(), 'Date_num']
-    fecha_event_opencv = pd.to_datetime(fecha_event_opencv * 10**9)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Fecha máximo valor OpenCV:</strong> {fecha_event_opencv}</h4>', unsafe_allow_html=True)
-
-with row2_col3:
-    mean_event_opencv = round(df_opencv_filtered['Value'].mean() * factor, 2)
-    st.markdown(f'<h4 style="font-size: 20px;"><strong>Valor promedio OpenCV:</strong> {mean_event_opencv} Amp</h4>', unsafe_allow_html=True)
+    with row2_col3:
+        mean_event_opencv = round(df_opencv_filtered['Value'].mean() * factor, 2)
+        st.markdown(f'<h4 style="font-size: 20px;"><strong>Valor promedio OpenCV:</strong> {mean_event_opencv} Amp</h4>', unsafe_allow_html=True)
 
