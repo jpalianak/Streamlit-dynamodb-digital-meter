@@ -80,14 +80,14 @@ st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 
 # Separación para la selección de fecha
 st.sidebar.markdown("### Selección de fecha")
-start_date = st.sidebar.date_input("Seleccionar fecha de inicio", st.session_state['start_date'])
+start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 
 # Espacio entre secciones
 st.sidebar.markdown("---")  # Otra línea divisoria
 
 # Separación para el factor de escala
 st.sidebar.markdown("### Factor de escala")
-factor = st.sidebar.slider('Factor de escala', min_value=1, max_value=20, value=10, step=1)
+factor = st.sidebar.slider('Valor', min_value=1, max_value=20, value=10, step=1)
 
 # Crear el gráfico con Plotly Express
 fig = px.line()
