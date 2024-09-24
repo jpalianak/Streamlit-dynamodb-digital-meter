@@ -128,7 +128,7 @@ with row1_col1:
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor CNN:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row1_col2:
-    fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax()*factor, 'Date_num']
+    fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax(), 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor CNN:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
 
@@ -144,7 +144,7 @@ with row2_col1:
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor OpenCV:</span> <span style="font-style: italic;">{max_event_opencv} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row2_col2:
-    fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax()*factor, 'Date_num']
+    fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax(), 'Date_num']
     fecha_event_opencv = pd.to_datetime(fecha_event_opencv * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor OpenCV:</span> <span style="font-style: italic;">{fecha_event_opencv}</span></h3>', unsafe_allow_html=True)
 
