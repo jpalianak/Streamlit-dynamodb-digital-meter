@@ -69,21 +69,24 @@ if 'start_date' not in st.session_state:
 
 # Barra lateral para opciones de visualización
 st.sidebar.header("Opciones de visualización")
+
+# Separación para las curvas a graficar
+st.sidebar.markdown("### Curvas a graficar")
 show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
 show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 
-# Seleccionar la fecha desde la que se quiere graficar
+# Espacio entre secciones
+st.sidebar.markdown("---")  # Línea divisoria para separar secciones
+
+# Separación para la selección de fecha
+st.sidebar.markdown("### Selección de fecha")
 start_date = st.sidebar.date_input("Seleccionar fecha de inicio", st.session_state['start_date'])
 
-# Actualizar el valor en session_state cuando el usuario cambia la fecha
-if start_date != st.session_state['start_date']:
-    st.session_state['start_date'] = start_date
+# Espacio entre secciones
+st.sidebar.markdown("---")  # Otra línea divisoria
 
-# Filtrar los datos a partir de la fecha seleccionada
-df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
-df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(st.session_state['start_date'])]
-
-# Slider para ajustar el factor de escala
+# Separación para el factor de escala
+st.sidebar.markdown("### Factor de escala")
 factor = st.sidebar.slider('Factor de escala', min_value=1, max_value=20, value=10, step=1)
 
 # Crear el gráfico con Plotly Express
