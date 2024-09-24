@@ -83,6 +83,9 @@ if start_date != st.session_state['start_date']:
 df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
 df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(st.session_state['start_date'])]
 
+# Slider para ajustar el factor de escala
+factor = st.sidebar.slider('Factor de escala', min_value=1, max_value=20, value=10, step=1)
+
 # Crear el gráfico con Plotly Express
 fig = px.line()
 
@@ -90,7 +93,7 @@ fig = px.line()
 if show_cnn:
     fig.add_scatter(
         x=df_cnn_filtered['Date'],
-        y=df_cnn_filtered['Value']*10,
+        y=df_cnn_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='blue', shape='linear'),
         name='SSD-MobileNet'
@@ -100,7 +103,7 @@ if show_cnn:
 if show_opencv:
     fig.add_scatter(
         x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=6),
-        y=df_opencv_filtered['Value']*10,
+        y=df_opencv_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='red', shape='linear'),
         name='OpenCV'
@@ -121,31 +124,31 @@ st.plotly_chart(fig)
 # Métricas para CNN
 row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
 with row1_col1:
-    max_event = df_cnn_filtered['Value'].max()
+    max_event = df_cnn_filtered['Value'].max()*factor
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor CNN:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row1_col2:
-    fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax(), 'Date_num']
+    fecha_event = df_cnn_filtered.loc[df_cnn_filtered['Value'].idxmax()*factor, 'Date_num']
     fecha_event = pd.to_datetime(fecha_event * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor CNN:</span> <span style="font-style: italic;">{fecha_event}</span></h3>', unsafe_allow_html=True)
 
 with row1_col3:
-    mean_event = round(df_cnn_filtered['Value'].mean(), 2)
+    mean_event = round(df_cnn_filtered['Value'].mean()*factor, 2)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio CNN:</span> <span style="font-style: italic;">{mean_event} Amp</span></h3>', unsafe_allow_html=True)
 
 # Métricas para OpenCV
 row2_col1, row2_spacer, row2_col2, row2_spacer, row2_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
 
 with row2_col1:
-    max_event_opencv = df_opencv_filtered['Value'].max()
+    max_event_opencv = df_opencv_filtered['Value'].max()*factor
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor OpenCV:</span> <span style="font-style: italic;">{max_event_opencv} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row2_col2:
-    fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax(), 'Date_num']
+    fecha_event_opencv = df_opencv_filtered.loc[df_opencv_filtered['Value'].idxmax()*factor, 'Date_num']
     fecha_event_opencv = pd.to_datetime(fecha_event_opencv * 10**9)
     st.write(f'<h3><span style="font-weight: bold;">Fecha máximo valor OpenCV:</span> <span style="font-style: italic;">{fecha_event_opencv}</span></h3>', unsafe_allow_html=True)
 
 with row2_col3:
-    mean_event_opencv = round(df_opencv_filtered['Value'].mean(), 2)
+    mean_event_opencv = round(df_opencv_filtered['Value'].mean()*factor, 2)
     st.write(f'<h3><span style="font-weight: bold;">Valor promedio OpenCV:</span> <span style="font-style: italic;">{mean_event_opencv} Amp</span></h3>', unsafe_allow_html=True)
 
