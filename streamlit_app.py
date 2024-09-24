@@ -124,7 +124,7 @@ st.plotly_chart(fig)
 # Métricas para CNN
 row1_col1,row0_spacer, row1_col2,row1_spacer, row1_col3= st.columns((0.3, 0.05, 0.3,0.05,0.3))
 with row1_col1:
-    max_event = df_cnn_filtered['Value'].max()*factor
+    max_event = round(df_cnn_filtered['Value'].max()*factor,2)
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor CNN:</span> <span style="font-style: italic;">{max_event} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row1_col2:
@@ -140,7 +140,7 @@ with row1_col3:
 row2_col1, row2_spacer, row2_col2, row2_spacer, row2_col3 = st.columns((0.3, 0.05, 0.3, 0.05, 0.3))
 
 with row2_col1:
-    max_event_opencv = df_opencv_filtered['Value'].max()*factor
+    max_event_opencv = round(df_opencv_filtered['Value'].max()*factor,2)
     st.write(f'<h3><span style="font-weight: bold;">Máximo valor OpenCV:</span> <span style="font-style: italic;">{max_event_opencv} Amp</span></h3>', unsafe_allow_html=True)  
 
 with row2_col2:
