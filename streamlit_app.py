@@ -89,10 +89,6 @@ if 'start_date' not in st.session_state:
 # Mostrar el selector de fecha con un key único
 start_date = st.sidebar.date_input("Fecha de inicio", value=st.session_state['start_date'], key="start_date_input")
 
-# Actualizar el valor en session_state cuando el usuario cambia la fecha
-if start_date != st.session_state['start_date']:
-    st.session_state['start_date'] = start_date
-
 # Filtrar los datos a partir de la fecha seleccionada
 df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
 df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(st.session_state['start_date'])]
