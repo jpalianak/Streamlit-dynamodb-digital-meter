@@ -79,8 +79,9 @@ show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 
 # Separación para la selección de fecha
-st.sidebar.markdown("### Selección de fecha")
-start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
+#st.sidebar.markdown("### Selección de fecha")
+#start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
+start_date = datetime(2024, 9, 24) 
 
 # Filtrar los datos a partir de la fecha seleccionada
 df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
