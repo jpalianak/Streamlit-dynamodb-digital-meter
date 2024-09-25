@@ -82,10 +82,6 @@ st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 st.sidebar.markdown("### Selección de fecha")
 start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 
-# Inicializar el valor en session_state para que persista entre recargas
-if 'start_date' not in st.session_state:
-    st.session_state['start_date'] = df_orig_cnn['Date'].min().date()
-
 # Mostrar el selector de fecha con un key único
 start_date = st.sidebar.date_input("Fecha de inicio", value=st.session_state['start_date'], key="start_date_input")
 
