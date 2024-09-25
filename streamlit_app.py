@@ -82,9 +82,6 @@ st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 st.sidebar.markdown("### Selección de fecha")
 start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 
-# Mostrar el selector de fecha con un key único
-start_date = st.sidebar.date_input("Fecha de inicio", value=st.session_state['start_date'], key="start_date_input")
-
 # Filtrar los datos a partir de la fecha seleccionada
 df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(st.session_state['start_date'])]
 df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(st.session_state['start_date'])]
