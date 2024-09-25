@@ -86,8 +86,8 @@ start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_da
 if 'start_date' not in st.session_state:
     st.session_state['start_date'] = df_orig_cnn['Date'].min().date()
 
-# Mostrar el selector de fecha con el valor de session_state
-start_date = st.sidebar.date_input("Fecha de inicio", value=st.session_state['start_date'])
+# Mostrar el selector de fecha con un key único
+start_date = st.sidebar.date_input("Fecha de inicio", value=st.session_state['start_date'], key="start_date_input")
 
 # Actualizar el valor en session_state cuando el usuario cambia la fecha
 if start_date != st.session_state['start_date']:
