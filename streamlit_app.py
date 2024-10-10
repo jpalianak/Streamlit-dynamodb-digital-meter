@@ -84,8 +84,12 @@ st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 start_date = datetime(2024, 10, 09) 
 
 # Filtrar los datos a partir de la fecha seleccionada
-df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(start_date)]
-df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(start_date)]
+#df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= pd.to_datetime(start_date)]
+#df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(start_date)]
+
+# Convertir la fecha a solo parte de la fecha para evitar problemas de comparación con horas
+df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'].dt.date >= start_date.date()]
+df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'].dt.date >= start_date.date()]
 
 # Espacio entre secciones
 st.sidebar.markdown("---")  # Otra línea divisoria
