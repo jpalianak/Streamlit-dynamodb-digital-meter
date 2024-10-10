@@ -88,8 +88,8 @@ start_date = datetime(2024, 10, 09)
 #df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= pd.to_datetime(start_date)]
 
 # Convertir la fecha a solo parte de la fecha para evitar problemas de comparación con horas
-df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'].dt.date >= start_date.date()]
-df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'].dt.date >= start_date.date()]
+df_cnn_filtered = df_orig_cnn[df_orig_cnn['Date'] >= start_date]
+df_opencv_filtered = df_orig_opencv[df_orig_opencv['Date'] >= start_date]
 
 # Espacio entre secciones
 st.sidebar.markdown("---")  # Otra línea divisoria
