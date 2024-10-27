@@ -45,7 +45,7 @@ header_html = """
 </div>
 """
 
-st.markdown(header_html, unsafe_allow_html=True)
+#st.markdown(header_html, unsafe_allow_html=True)
 
 def get_data(table_name):
     dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
