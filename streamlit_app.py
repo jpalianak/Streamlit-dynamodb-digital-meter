@@ -82,7 +82,7 @@ st.sidebar.markdown("---")  # Línea divisoria para separar secciones
 #st.sidebar.markdown("### Selección de fecha")
 #start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 start_date = datetime(2024, 9, 28)
-end_date = datetime(2024, 09, 29)  # Define tu fecha de fin
+end_date = datetime(2024, 9, 29)  # Define tu fecha de fin
 
 # Filtrar los datos dentro del rango de fechas seleccionado
 df_cnn_filtered = df_orig_cnn[(df_orig_cnn['Date'] >= pd.to_datetime(start_date)) & (df_orig_cnn['Date'] <= pd.to_datetime(end_date))]
