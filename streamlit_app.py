@@ -49,7 +49,7 @@ fig.update_layout(
 )
 
 # Ajustes de simulación
-factor = 100  # Factor de escala
+factor = 10  # Factor de escala
 delay = 0.5  # Delay entre actualizaciones en segundos
 max_points = max(len(df_cnn_filtered), len(df_opencv_filtered))  # Máximo número de puntos
 
