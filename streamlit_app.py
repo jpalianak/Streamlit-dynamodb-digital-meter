@@ -163,6 +163,6 @@ if show_opencv:
         st.markdown(f'<h4 style="font-size: 20px;"><strong>Fecha máximo valor OpenCV:</strong> {fecha_event_opencv}</h4>', unsafe_allow_html=True)
 
     with row2_col3:
-        mean_event_opencv = round(df_opencv_filtered['Value'].mean() * factor, 2)
+        mean_event_opencv = round(df_cnn_filtered['Value'].mean() * factor, 2)
         st.markdown(f'<h4 style="font-size: 20px;"><strong>Valor promedio OpenCV:</strong> {mean_event_opencv} Amp</h4>', unsafe_allow_html=True)
 
