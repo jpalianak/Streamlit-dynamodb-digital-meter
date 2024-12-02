@@ -72,8 +72,8 @@ st.sidebar.header("Opciones de visualización")
 
 # Separación para las curvas a graficar
 #st.sidebar.markdown("### Curvas a graficar")
-#show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
-#show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
+show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
+show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 
 # Espacio entre secciones
 #st.sidebar.markdown("---")  # Línea divisoria para separar secciones
