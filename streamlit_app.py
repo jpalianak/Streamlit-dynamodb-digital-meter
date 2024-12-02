@@ -92,7 +92,7 @@ df_opencv_filtered = df_orig_opencv[(df_orig_opencv['Date'] >= pd.to_datetime(st
 st.sidebar.markdown("---")  # Otra línea divisoria
 
 # Separación para el factor de escala
-st.sidebar.markdown("### Factor de escala")
+#st.sidebar.markdown("### Factor de escala")
 factor = st.sidebar.slider('Valor', min_value=1, max_value=20, value=10, step=1)
 
 # Crear el gráfico con Plotly Express
@@ -102,7 +102,7 @@ fig = px.line()
 if show_cnn:
     fig.add_scatter(
         x=df_cnn_filtered['Date'],
-        y=df_cnn_filtered['Value']*factor*30,
+        y=df_cnn_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='blue', shape='linear'),
         name='SSD-MobileNet'
@@ -112,7 +112,7 @@ if show_cnn:
 if show_opencv:
     fig.add_scatter(
         x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=6),
-        y=df_opencv_filtered['Value']*factor*30,
+        y=df_opencv_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='red', shape='linear'),
         name='OpenCV'
