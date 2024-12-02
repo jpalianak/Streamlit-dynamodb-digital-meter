@@ -116,7 +116,7 @@ if show_cnn:
 if show_opencv:
     fig.add_scatter(
         x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=6),
-        y=df_opencv_filtered['Value']*factor,
+        y=df_cnn_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='red', shape='linear'),
         name='OpenCV'
