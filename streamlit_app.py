@@ -97,7 +97,7 @@ df_opencv_filtered = df_orig_opencv[(df_orig_opencv['Date'] >= pd.to_datetime(st
 # Separación para el factor de escala
 #st.sidebar.markdown("### Factor de escala")
 #factor = st.sidebar.slider('Valor', min_value=1, max_value=20, value=10, step=1)
-factor = 20
+factor = 100
 
 # Crear el gráfico con Plotly Express
 fig = px.line()
