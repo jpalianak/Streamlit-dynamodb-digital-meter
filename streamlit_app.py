@@ -29,8 +29,8 @@ df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
 df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
 
 # Selección de fecha inicial y final para los datos
-start_date = datetime(2024, 12, 1)
-end_date = datetime(2024, 12, 3)
+start_date = datetime(2024, 10, 7)
+end_date = datetime(2024, 10, 8)
 df_cnn_filtered = df_orig_cnn[(df_orig_cnn['Date'] >= start_date) & (df_orig_cnn['Date'] <= end_date)]
 df_opencv_filtered = df_orig_opencv[(df_orig_opencv['Date'] >= start_date) & (df_orig_opencv['Date'] <= end_date)]
 
