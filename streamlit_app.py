@@ -72,8 +72,8 @@ if 'start_date' not in st.session_state:
 
 # Separación para las curvas a graficar
 #st.sidebar.markdown("### Curvas a graficar")
-show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
-show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
+#show_cnn = st.sidebar.checkbox('Mostrar curva SSD-MobileNet', value=True)
+#show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 
 # Espacio entre secciones
 #st.sidebar.markdown("---")  # Línea divisoria para separar secciones
@@ -83,6 +83,9 @@ show_opencv = st.sidebar.checkbox('Mostrar curva OpenCV', value=True)
 #start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 start_date = datetime(2024, 12, 1)
 end_date = datetime(2024, 12, 2)  # Define tu fecha de fin
+
+show_cnn = True
+show_opencv = True
 
 # Filtrar los datos dentro del rango de fechas seleccionado
 df_cnn_filtered = df_orig_cnn[(df_orig_cnn['Date'] >= pd.to_datetime(start_date)) & (df_orig_cnn['Date'] <= pd.to_datetime(end_date))]
