@@ -68,7 +68,7 @@ if 'start_date' not in st.session_state:
     st.session_state['start_date'] = df_orig_cnn['Date'].min().date()
 
 # Barra lateral para opciones de visualización
-st.sidebar.header("Opciones de visualización")
+#st.sidebar.header("Opciones de visualización")
 
 # Separación para las curvas a graficar
 #st.sidebar.markdown("### Curvas a graficar")
@@ -89,7 +89,7 @@ df_cnn_filtered = df_orig_cnn[(df_orig_cnn['Date'] >= pd.to_datetime(start_date)
 df_opencv_filtered = df_orig_opencv[(df_orig_opencv['Date'] >= pd.to_datetime(start_date)) & (df_orig_opencv['Date'] <= pd.to_datetime(end_date))]
 
 # Espacio entre secciones
-st.sidebar.markdown("---")  # Otra línea divisoria
+#st.sidebar.markdown("---")  # Otra línea divisoria
 
 # Separación para el factor de escala
 #st.sidebar.markdown("### Factor de escala")
