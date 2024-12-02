@@ -82,7 +82,7 @@ if 'start_date' not in st.session_state:
 #st.sidebar.markdown("### Selección de fecha")
 #start_date = st.sidebar.date_input("Fecha de inicio", st.session_state['start_date'])
 start_date = datetime(2024, 12, 1)
-end_date = datetime(2024, 12, 2)  # Define tu fecha de fin
+end_date = datetime(2024, 12, 3)  # Define tu fecha de fin
 
 show_cnn = True
 show_opencv = True
