@@ -34,6 +34,10 @@ end_date = datetime(2024, 10, 7, 23, 20, 0)   # 1 de diciembre, 20:00:00
 df_cnn_filtered = df_orig_cnn[(df_orig_cnn['Date'] >= start_date) & (df_orig_cnn['Date'] <= end_date)]
 df_opencv_filtered = df_orig_opencv[(df_orig_opencv['Date'] >= start_date) & (df_orig_opencv['Date'] <= end_date)]
 
+# Aplicar desplazamiento a la curva OpenCV (e.g., retraso de 10 minutos)
+time_shift = timedelta(seconds=5)
+df_opencv_filtered['Date'] = df_opencv_filtered['Date'] + time_shift
+
 # Crear un contenedor para el gráfico
 placeholder = st.empty()
 
