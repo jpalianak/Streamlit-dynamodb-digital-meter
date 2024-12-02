@@ -102,7 +102,7 @@ fig = px.line()
 if show_cnn:
     fig.add_scatter(
         x=df_cnn_filtered['Date'],
-        y=df_cnn_filtered['Value']*factor,
+        y=df_cnn_filtered['Value']*factor*3,
         mode='lines+markers',
         line=dict(color='blue', shape='linear'),
         name='SSD-MobileNet'
@@ -112,7 +112,7 @@ if show_cnn:
 if show_opencv:
     fig.add_scatter(
         x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=6),
-        y=df_opencv_filtered['Value']*factor,
+        y=df_opencv_filtered['Value']*factor*3,
         mode='lines+markers',
         line=dict(color='red', shape='linear'),
         name='OpenCV'
