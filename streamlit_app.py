@@ -111,7 +111,7 @@ if show_cnn:
 # Añadir traza para OpenCV
 if show_opencv:
     fig.add_scatter(
-        x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=5),
+        x=df_opencv_filtered['Date'] + pd.Timedelta(seconds=7),
         y=df_opencv_filtered['Value']*factor,
         mode='lines+markers',
         line=dict(color='red', shape='linear'),
