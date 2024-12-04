@@ -58,7 +58,7 @@ delay = 0.5  # Delay entre actualizaciones en segundos
 max_points = max(len(df_cnn_filtered), len(df_opencv_filtered))  # Máximo número de puntos
 
 # Iteración sincronizada para las dos curvas
-for i in range(1, max_points + 1):
+for i in range(1,1):# max_points + 1):
     # Progresión de puntos (sin exceder el índice máximo)
     cnn_data = df_cnn_filtered.iloc[:min(i, len(df_cnn_filtered))]
     opencv_data = df_opencv_filtered.iloc[:min(i, len(df_opencv_filtered))]
