@@ -25,7 +25,7 @@ def get_data(table_name):
     return df
 
 # Cargar los datos de DynamoDB
-df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD')
+df_orig_cnn = get_data('DynamoDBTable-SAM-Digital-Meter-SSD-example')
 df_orig_opencv = get_data('DynamoDBTable-SAM-Digital-Meter-OpenCV')
 
 # Selección de fecha inicial y final para los datos
