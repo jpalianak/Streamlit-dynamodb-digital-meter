@@ -72,13 +72,13 @@ for i in range(1, max_points + 1):
         line=dict(color='blue', shape='linear'),
         name='SSD-MobileNet'
     )
-    fig.add_scatter(
-        x=opencv_data['Date'],
-        y=opencv_data['Value'] * factor,
-        mode='lines+markers',
-        line=dict(color='red', shape='linear'),
-        name='OpenCV'
-    )
+    #fig.add_scatter(
+    #    x=opencv_data['Date'],
+    #    y=opencv_data['Value'] * factor,
+    #    mode='lines+markers',
+    #    line=dict(color='red', shape='linear'),
+    #    name='OpenCV'
+    #)
 
     # Mostrar el gráfico en el contenedor
     placeholder.plotly_chart(fig, use_container_width=True)
